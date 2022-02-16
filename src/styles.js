@@ -1,5 +1,7 @@
 import {makeStyles} from '@material-ui/core/styles'
 
+
+
 export default makeStyles(() => ({
   appBar: {
     borderRadius: 15,
@@ -10,7 +12,8 @@ export default makeStyles(() => ({
     alignItems: "center",
   },
   heading: {
-    color: "rgba(0,183,255, 1)",
+    color: "red",
+    fontFamily:"fantasy"
   },
   image: {
     marginLeft: "15px",

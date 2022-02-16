@@ -29,3 +29,16 @@ export const createPost = (post) => async  (dispatch) => {
         console.log("Actions",e.message);
     }
 }
+
+export const updatePost =(id,post)=> async (dispatch) => {
+    try {
+        //api request to update the post
+        //it returning the updated memory or the post
+       const {data} = await api.updatePost(id,post);
+
+       dispatch({type:'UPDATE',payload:data})
+
+    } catch (e) {
+        console.log(e.message);
+    }
+}

@@ -8,10 +8,13 @@ export default makeStyles({
     backgroundBlendMode: "darken",
   },
   border: {
-    border: "solid",
+    border: "solid 4px black",
   },
   fullHeightCard: {
     height: "100%",
+  },dots:{
+    color:"red",
+   margin:"-100px 0px 0px 0px",
   },
   card: {
     display: "flex",
@@ -20,16 +23,17 @@ export default makeStyles({
     borderRadius: "15px",
     height: "100%",
     position: "relative",
+    
   },
   overlay: {
     position: "absolute",
-    top: "20px",
-    left: "20px",
+    top: "5px",
+    left: "50px",
     color: "white",
   },
   overlay2: {
     position: "absolute",
-    top: "20px",
+    top: "70px",
     right: "20px",
     color: "white",
   },

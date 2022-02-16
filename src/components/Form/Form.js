@@ -6,8 +6,8 @@ import {useDispatch} from 'react-redux';
 //styles
 import useStyles from "./styles";
 // ---
-import {createPost} from '../../actions/posts'
-const Form = () => {
+import {createPost,updatePost} from '../../actions/posts'
+const Form = ({currentId,setCurrentId}) => {
     const [postData,setPostData] = useState({
         creator:'',
         title:'',
@@ -23,11 +23,18 @@ const Form = () => {
   const handleSubmit = (e) => {
       //first of all,we have to say event that prevent default not to get the refresh in the browser
       e.preventDefault();
-      //and the dispatch an action
-      //this time it will be createPost,and now inside of there we going to pass all the data from our state posData
-      dispatch(createPost(postData))
-      console.log(postData);
-      //once the data is dispatched,then we go to reducers
+
+      if(currentId){
+
+        dispatch(updatePost(currentId,postData))
+      }else{
+
+        //and the dispatch an action
+        //this time it will be createPost,and now inside of there we going to pass all the data from our state posData
+        dispatch(createPost(postData))
+        console.log(postData);
+        //once the data is dispatched,then we go to reducers
+      }
   };
 
   const clear = ()=>{
